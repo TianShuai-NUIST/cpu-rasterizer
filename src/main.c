@@ -90,7 +90,7 @@ int main(int argc, char **argv){
 	   printf("Argument to less...\nUsage Page is %s <ModelPath>\n",argv[0]);
 	   exit(1); 
     } else {
-	   model_path = (char*)malloc(sizeof(char) * strlen(argv[1]));
+	   model_path = (char*)malloc(sizeof(char) * (strlen(argv[1] + 1)));
 	   strcpy(model_path, argv[1]);
     }
 
@@ -157,11 +157,13 @@ int main(int argc, char **argv){
 	   BeginDrawing();
 	   ClearBackground(BACKGROUND);
 
-	   for(int i = 0; i < LineCount; i++){
+	   // for(int i = 0; i < LineCount; i++){
 		  LinkVertex(rvb,ib,LineCount);
-	   }
+	   // }
 
 	   EndDrawing();
     }
+
+    CloseWindow();
     return 0;
 }
